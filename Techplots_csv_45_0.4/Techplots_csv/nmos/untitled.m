@@ -39,14 +39,20 @@ for sheetIdx = 1:length(sheetNames)
             y = temp;
         end
 
+        if strcmp(sheetName, 'Vgt')
+            temp = x;
+            x = y;
+            y = temp;
+        end
+
         % Plot each dataset with unique color and marker
         plot(x, y, 'LineWidth', 1.5, 'DisplayName', sprintf('L = %d', 45 * (i + 1) / 2));
     end
 
     % Add labels, title, and legend
     grid on;
-    xlabel('X-axis Label'); % Replace with appropriate label
-    ylabel('Y-axis Label'); % Replace with appropriate label
+    xlabel('gm/Id'); % X-axis label for all sheets
+    ylabel(sheetName); % Use the sheet name as the Y-axis label
     title(sprintf('Excel Data Plot for Sheet: %s', sheetName));
     legend show; % Automatically show legend for all datasets
     hold off;
