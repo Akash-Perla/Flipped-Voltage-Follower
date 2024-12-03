@@ -37,8 +37,8 @@ for sheetIdx = 1:length(sheetNames)
 
     % Add labels, title, and legend
     grid on;
-    xlabel('X-axis Label'); % Replace with appropriate label
-    ylabel('Y-axis Label'); % Replace with appropriate label
+    xlabel('gm/Id'); % Replace with appropriate label
+    ylabel(sheetName); % Replace with appropriate label
     title(sprintf('Excel Data Plot for Sheet: %s', sheetName));
     legend show; % Automatically show legend for all datasets
     hold off;
