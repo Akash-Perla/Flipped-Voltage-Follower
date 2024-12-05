@@ -4,6 +4,6 @@ This is our attempt to replicate Flipped Voltage Follower given in the paper "Fl
 
 ### Contributors
 
-Barath S Narayan
-Achintya Harsha
-Akash Perla
+1. Barath S Narayan
+2. Achintya Harsha
+3. Akash Perla
