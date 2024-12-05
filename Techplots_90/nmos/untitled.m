@@ -46,7 +46,7 @@ for sheetIdx = 1:length(sheetNames)
         end
 
         % Plot each dataset with unique color and marker
-        plot(x, y, 'LineWidth', 1.5, 'DisplayName', sprintf('L = %d', 180 + 90 * (i + 1) / 2));
+        plot(x, y, 'LineWidth', 1.5, 'DisplayName', sprintf('L = %d', 180 + 90 * (i - 1) / 2));
     end
 
     % Add labels, title, and legend

@@ -32,7 +32,7 @@ for sheetIdx = 1:length(sheetNames)
         y = data(:, i + 1);   % Y-axis values (even columns)
 
         % Plot each dataset with unique color and marker
-        plot(x, y, 'LineWidth', 1.5, 'DisplayName', sprintf('L = %d', 45*(i+1)/2));
+        plot(x, y, 'LineWidth', 1.5, 'DisplayName', sprintf('L = %d', 180 + 45*(i - 1)/2));
     end
 
     % Add labels, title, and legend
