@@ -120,3 +120,40 @@ grid on;
 
 % Overall adjustments
 sgtitle('PSRR (Light Iload = 2mA)');
+
+%% Fifth CSV File: Plotting Frequency, dB20, Vout, and Vline
+data5 = readtable('fvf_standalone.csv'); % Replace with your fifth CSV file name
+
+% Extract columns
+freq5 = data5{:, 1};        % Column 1: Frequency (Hz)
+gain_dB20_5 = data5{:, 2};  % Column 2: dB20((VF("/Vout") / VF("/Vline"))) (dB)
+Vout5 = data5{:, 3};        % Column 3: Vout (V)
+Vline5 = data5{:, 4};       % Column 4: Vline (V)
+
+% Plot Gain dB20 vs Frequency
+figure;
+
+% dB20 vs Frequency (Logarithmic x-axis)
+subplot(2, 1, 2); % Second subplot
+semilogx(freq5, gain_dB20_5, 'm-', 'LineWidth', 1.5); % Magenta line for Gain dB20
+xlabel('Frequency (Hz)');
+ylabel('dB20 (dB)');
+title('Gain vs Frequency (Log Scale)');
+ylim([-80, -20]);
+grid on;
+
+% Vout and Vline vs Frequency
+subplot(2, 1, 1); % First subplot
+semilogx(freq5, Vline5, 'b-', 'LineWidth', 1.5); % Blue solid line for Vline
+hold on;
+semilogx(freq5, Vout5, 'r--', 'LineWidth', 1.5); % Red dashed line for Vout
+hold off;
+xlabel('Frequency (Hz)');
+ylabel('Voltage (V)');
+title('Voltage Vs Frequency');
+legend('Vline', 'Vout');
+ylim([-0.005, 0.015]);
+grid on;
+
+% Overall adjustments
+sgtitle('FVF Standalone Analysis');
